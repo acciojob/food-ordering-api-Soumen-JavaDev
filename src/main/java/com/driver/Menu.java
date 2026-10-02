@@ -11,7 +11,9 @@ public class Menu {
     }
 
     public void addMenuItem(Food food) {
+
     	// your code goes here
+        menuItems.add(food);
     }
 
     public List<Food> getMenuItems() {
@@ -21,6 +23,7 @@ public class Menu {
 
     public Food getMenuItemById(int id) {
     	// your code goes here
-        return null;
+        return menuItems.get(id);
+       
     }
 }

@@ -12,6 +12,7 @@ public class Order {
 
     public void addItem(Food food) {
     	// your code goes here
+        items.add(food);
     }
 
     public List<Food> getItems() {
@@ -22,6 +23,9 @@ public class Order {
     public double getTotalBill() {
         double totalBill = 0;
      // your code goes here
+      for(int i=0;i<items.size();i++){
+        totalBill+=items.get(i).getPrice();
+      }
         return totalBill;
     }
 }
