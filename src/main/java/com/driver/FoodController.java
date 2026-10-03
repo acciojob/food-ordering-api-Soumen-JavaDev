@@ -16,11 +16,14 @@ public class FoodController {
 
     public FoodController() {
     	// your code goes here
+         menu = new Menu();
+        currentOrder = new Order();
     }
 
     @GetMapping("/menu")
     public List<Food> getMenu() {
     	// your code goes here
+
         return menu.getMenuItems();
     }
 
@@ -28,7 +31,10 @@ public class FoodController {
     public void placeOrder(@PathVariable int itemId) {
     	// your code goes here
        Food food= menu.getMenuItemById(itemId);
-       currentOrder.addItem(food);
+      
+        if (food != null) {
+            currentOrder.addItem(food);
+        }
         
     }
 

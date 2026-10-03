@@ -8,11 +8,14 @@ public class Order {
 
     public Order() {
     	// your code goes here
+         items = new ArrayList<>();
     }
 
     public void addItem(Food food) {
     	// your code goes here
-        items.add(food);
+         if (food != null) {
+            items.add(food);
+        }
     }
 
     public List<Food> getItems() {
@@ -23,9 +26,10 @@ public class Order {
     public double getTotalBill() {
         double totalBill = 0;
      // your code goes here
-      for(int i=0;i<items.size();i++){
-        totalBill+=items.get(i).getPrice();
-      }
+       for (Food food : items) {
+            totalBill += food.getPrice();
+        }
+
         return totalBill;
     }
 }
